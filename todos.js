@@ -9,10 +9,11 @@ const store = require("connect-loki");
 const SessionPersistence = require("./lib/session-persistence");
 const PgPersistence = require("./lib/pg-persistence");
 const catchError = require("./lib/catch-error");
+require("dotenv").config();
 
 const app = express();
-const host = config.HOST;
-const port = config.PORT;
+const host = process.env.HOST;
+const port = process.env.PORT;
 const LokiStore = store(session);
 
 app.set("views", "./views");
@@ -374,6 +375,6 @@ app.use((err, req, res, _next) => {
 });
 
 // Listener
-app.listen(port, host, () => {
+app.listen(process.env.PORT, host, () => {
   console.log(`Todos is listening on port ${port} of ${host}!`);
 });
