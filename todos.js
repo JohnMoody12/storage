@@ -1,3 +1,4 @@
+const config = require("./lib/config");
 const express = require("express");
 const morgan = require("morgan");
 const flash = require("express-flash");
@@ -32,7 +33,7 @@ app.use(
     name: "launch-school-todos-session-id",
     resave: false,
     saveUninitialized: true,
-    secret: "this is not very secure",
+    secret: config.SECRET,
     store: new LokiStore({}),
   })
 );

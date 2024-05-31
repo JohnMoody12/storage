@@ -20,8 +20,3 @@ CREATE TABLE users (
   password text NOT NULL
 );
 
-INSERT INTO users (username, password)
-  VALUES ('admin', '$2b$10$uC3lSZqheRZja2B.jBA8q.2s3hkEviwTuRWdw36tngJBkm1i/Llo6'),
-         ('developer', 'letmein'),
-         ('somebody', 'knock-knock'),
-         ('bob', '$2b$10$zbE/8Ezx70/A/dTMZW2SU.VJTByUXqxapZ82EE7LlJv84ylE83nmu');
